@@ -23,7 +23,12 @@ It shall draw dmenu, write something and you can see it returned. The previous b
 
 ### ```i3wm```
 
-Add this lines to your i3wm config if you are using it
+- First make the scripts executable
+```sh
+$ chmod +x path_to_bookmark_scripts/bookmarkthis.sh
+$ chmod +x path_to_bookmark_scripts/getbookmark.sh
+```
+- Then add this lines to your i3wm config if you are using it
 
 ``` i3
 ## bookmarks scripts
