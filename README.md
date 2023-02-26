@@ -1,9 +1,3 @@
-  _                 _                         _              _
- | |__   ___   ___ | | ___ __ ___   __ _ _ __| | __      ___| |__
- | '_ \ / _ \ / _ \| |/ / '_ ` _ \ / _` | '__| |/ /     / __| '_ \
- | |_) | (_) | (_) |   <| | | | | | (_| | |  |   <   _  \__ \ | | |
- |_.__/ \___/ \___/|_|\_\_| |_| |_|\__,_|_|  |_|\_\ (_) |___/_| |_|
-
 
 ```bookmark.sh``` is simply two scripts which saves a bookmarks and retrieve a bookmark. The idea is to have a global bookmark file to use anywhere you want not just a specific browser, also some browser dose not offer sync option.
 
