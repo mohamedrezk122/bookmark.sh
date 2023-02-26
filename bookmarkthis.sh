@@ -7,7 +7,7 @@
 # |_.__/ \___/ \___/|_|\_\_| |_| |_|\__,_|_|  |_|\_\ (_) |___/_| |_|
 
 # absolute path to the bookmark file
-BOOKMARKFILE="/home/rezk/.scripts/bookmark_scripts/bookmarks.md"
+BOOKMARKFILE="/home/rezk/.scripts/bookmarks.md"
 # program of your choice
 METHOD="dmenu" # or "rofi"
 
@@ -35,13 +35,14 @@ fi
 # get main field from dmenu or rofi 
 chosenField=$(echo "$FileFields" | $ChooseCommand -p "Choose field: " -l 7)
 
-# exit if no field selected
-[ -z "$chosenField" ] && exit 
 
 # add new field 
 if echo "$chosenField" | grep -q "add" ; then
     # there is no -t option in dmenu it is my build
     chosenField=$($InputCommand -p "Name of the field ? " |  xargs )
+    # exit if no field selected
+    [ -z "$chosenField" ] && exit 
+
     # check if the field is already there 
     if ! grep -q "## $chosenField ##" $BOOKMARKFILE; then
         echo $"${NEWLINE}${NEWLINE}-----------------" >> $BOOKMARKFILE
@@ -49,6 +50,10 @@ if echo "$chosenField" | grep -q "add" ; then
         echo $"-----------------${NEWLINE}${NEWLINE}" >> $BOOKMARKFILE
     fi
 fi
+
+# exit if no field selected
+[ -z "$chosenField" ] && exit 
+
 
 # remove leading and trailing whitespaces
 chosenField="$(echo "$chosenField" | xargs)" 
