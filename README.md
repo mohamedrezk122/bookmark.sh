@@ -1,4 +1,7 @@
 
+https://user-images.githubusercontent.com/59314933/221429644-c2fb6650-e759-4540-aff5-f683b756a1ed.mp4
+
+
 ```bookmark.sh``` is simply two scripts which saves a bookmarks and retrieve a bookmark. The idea is to have a global bookmark file to use anywhere you want not just a specific browser, also some browser dose not offer sync option.
 
 # Installation 
@@ -24,8 +27,8 @@ Add this lines to your i3wm config if you are using it
 
 ``` i3
 ## bookmarks scripts
-bindsym $mod+bracketright exec --no-startup-id ~/.scripts/bookmark_scripts/getbookmark.sh
-bindsym $mod+bracketleft  exec --no-startup-id ~/.scripts/bookmark_scripts/bookmarkthis.sh
+bindsym $mod+bracketright exec --no-startup-id path_to_bookmark_scripts/getbookmark.sh
+bindsym $mod+bracketleft  exec --no-startup-id path_to_bookmark_scripts/bookmarkthis.sh
 ```
 
 # Usage

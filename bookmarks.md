@@ -23,6 +23,7 @@
 -----------------
 ## stuff made here ##
 -----------------
+[robot](https://www.youtube.com/watch?v=Gu_1S77XkiM)
 [puzzle](https://www.youtube.com/watch?v=WsPHBD5NsS0)
 
 
