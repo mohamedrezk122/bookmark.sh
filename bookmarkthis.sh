@@ -36,7 +36,7 @@ fi
 chosenField=$(echo "$FileFields" | $ChooseCommand -p "Choose field: " -l 7)
 
 # exit if no field selected
-[ -z $chosenField ] && exit 
+[ -z "$chosenField" ] && exit 
 
 # add new field 
 if echo "$chosenField" | grep -q "add" ; then
@@ -51,7 +51,7 @@ if echo "$chosenField" | grep -q "add" ; then
 fi
 
 # remove leading and trailing whitespaces
-chosenField=`echo $chosenField | xargs` 
+chosenField="$(echo "$chosenField" | xargs)" 
 
 grep -q "## $chosenField ##" "$BOOKMARKFILE" || { 
     notify-send "OoPs!" "Not a valid field"
@@ -60,7 +60,7 @@ grep -q "## $chosenField ##" "$BOOKMARKFILE" || {
 # get the line number of the main field
 linenum=$(grep -n "## $chosenField ##" $BOOKMARKFILE | cut -d ":" -f 1)  
 # add two and remove whitespces  
-linenum=`echo $((linenum + 2)) | xargs`
+linenum="$(echo $((linenum + 2)) | xargs)"
 # search for bookmark if it in the file
 if  grep -q "^$bookmark" $BOOKMARKFILE  ; then
     notify-send "OoPs""Bookmark is already there under $chosenField"
@@ -70,7 +70,7 @@ else
     title=$($InputCommand -p "Bookmark title" | xargs )
     content="[$title]($bookmark)"
     # if no title typed then just append the bookmark
-    [ -z $title ] && content="($bookmark)"    
+    [ -z "$title" ] && content="($bookmark)"    
     # append the content to the file 
     sed -i "$linenum i  $content" "$BOOKMARKFILE"
     notify-send "🔖 $title added " "Bookmark $bookmark added under $chosenField field "
