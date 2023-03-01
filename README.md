@@ -12,6 +12,8 @@ https://user-images.githubusercontent.com/59314933/221429644-c2fb6650-e759-4540-
 ``` sh 
 $ cd path_to_dmenu/
 $ git apply path_to_patch/dmenu-userinputtext-20230225-db84b38.diff 
+$ make
+$ sudo make clean install
 ``` 
 It will display some warnings, it is fine. you can test the patch through the command
 ```sh
